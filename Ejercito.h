@@ -71,12 +71,12 @@ void    EjercitoMueve(Ejercito e, Personaje p[], float tiempo_delta);
 /**
   \brief Comprueba si ha habido una colisión con algún enemigo del ejército.
 
-  Se debe ejecutar en cada iteración del bucle para comprobar si el personaje se ha chocado con algún enemigo.
+  Se debe ejecutar en cada iteración del bucle para comprobar si algún personaje se ha chocado con algún enemigo.
   Si ha habido una colisión con un enemigo, ese enemigo se liberará. Además la función devolverá un 1.
-  Se puede utilizar esta función, por ejemplo, en un análisis de casos que elimine un escudo del jugador si hay una colisión, o que directamente acabe la partida.
+  Se puede utilizar esta función, por ejemplo, en un análisis de casos que elimine un escudo si hay una colisión, o que directamente acabe la partida.
 
   \param e Ejército que queremos comprobar.
-  \param p Personaje que se está manejando.
+  \param p[] Personaje(s) que se está(n) manejando.
   \return 1 si ha habido una colisión, 0 en caso contrario.
  */
 int     EjercitoColision(Ejercito e, Personaje p[]);

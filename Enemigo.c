@@ -5,7 +5,6 @@
 struct EnemigoRep{
     int w,h,t,s,sMax,p;
     float x, y;
-    float temporizador;
     Imagen i;
     int vx,vy;
 };
@@ -26,7 +25,6 @@ Enemigo EnemigoCrea(Imagen i, int x, int y, int w, int h, int vx, int vy, int t,
     e->s = s;
     e->sMax = s;
     e->p = p;
-    e->temporizador = 0;
     return e;
 }
 
@@ -187,15 +185,5 @@ int    EnemigoT(Enemigo e)
 int    EnemigoP(Enemigo e)
 {
     return e->p;
-}
-
-float  EnemigoTemp(Enemigo e)
-{
-    return e->temporizador;
-}
-
-void EnemigoReseteaTemp(Enemigo e)
-{
-    e->temporizador = 0;
 }
 

@@ -39,10 +39,10 @@ Enemigo EnemigoCrea(Imagen i, int x, int y, int w, int h, int vx, int vy, int t,
 void    EnemigoLibera(Enemigo e);
 
 /**
-    \brief Mueve el enemigo indicado. Dependiendo de su tipo puede cambiar su comportamiento según la posición del personaje.
+    \brief Mueve el enemigo indicado. Dependiendo de su tipo puede cambiar su comportamiento según la posición de los personajes.
 
     \param e Enemigo a mover.
-    \param p Personaje que se está manejando.
+    \param p[] Personaje(s) que se está(n) manejando.
 */
 void    EnemigoMueve(Enemigo e, Personaje p[], float tiempo_delta);
 
@@ -140,9 +140,5 @@ int    EnemigoT(Enemigo e);
     \return Puntos que da el enemigo tras ser destruido.
 */
 int    EnemigoP(Enemigo e);
-
-float  EnemigoTemp(Enemigo e);
-
-void EnemigoReseteaTemp(Enemigo e);
 
 #endif // Enemigo_H

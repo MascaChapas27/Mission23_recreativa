@@ -591,6 +591,7 @@ int main(int argc, char *argv[])
             temporizador_generador_enemigo+=tiempo_delta;
 
             if(temporizador_generador_enemigo>1){
+
                 temporizador_generador_enemigo = 0;
 
                 //Vamos generando enemigos con el tiempo dependiendo del nivel

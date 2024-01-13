@@ -23,7 +23,7 @@
 
 /**
    \file Personaje.h
-   \brief  Fichero de cabecera para gestionar nuestro personaje
+   \brief  Fichero de cabecera para gestionar personajes
 */
 
 /**
@@ -61,7 +61,7 @@ Personaje PersonajeCrea(Imagen i, int x, int y, int w, int h,int v, int d, int c
 void    PersonajeLibera(Personaje p);
 
 /**
-  \brief Mueve al personaje dependiendo de la tecla que estemos pulsando.
+  \brief Mueve a los personajes dependiendo de las teclas que estemos pulsando.
 
   Se debe ejecutar en cada iteración de nuestro juego.
 
@@ -72,9 +72,7 @@ void    PersonajeLibera(Personaje p);
 
   Si pulsamos varias teclas a la vez podremos hacer que se mueva en diagonal.
 
-  Si atravesamos algún borde de la pantalla apareceremos en el extremo contrario
-
-  \param p Personaje a mover
+  \param personajes[] Personajes(s) a mover
  */
 void    PersonajeMueve(Personaje personajes[], float tiempo_delta);
 
@@ -83,14 +81,14 @@ void    PersonajeMueve(Personaje personajes[], float tiempo_delta);
 
   Se debe ejecutar en cada iteración de nuestro juego.
 
-  \param p Personaje a mover
+  \param p Personaje a dibujar
  */
 void    PersonajeDibuja(Personaje p);
 
 /**
   \brief Incrementa la cadencia de nuestro personaje en la cantidad indicada
 
-  \pre La cadencia alcanza su valor máximo en 1 por lo que no se puede permitir que alcance valores menores a 1. Hay que controlar que al mejorar la cadencia no se sobrepase el límite.
+  \pre La cadencia alcanza su valor máximo cuando el retraso entre disparos es 1 por lo que no se puede permitir que alcance valores menores a 1. Hay que controlar que al mejorar la cadencia no se sobrepase el límite.
 
   Hay que tener en cuenta que la cadencia es el retraso entre disparos por lo que al aumentarla en 3, por ejemplo, la función se encarga de restar 3 a la cadencia actual.
 
@@ -109,7 +107,7 @@ void    PersonajeMejoraCadencia(Personaje p, int cantidad);
   \param p Personaje cuyo daño queremos cambiar.
   \param cantidad Cantidad que queremos sumar al daño actual.
  */
-void    PersonajeMejoraDolor(Personaje p,int cantidad);
+void    PersonajeMejoraDolor(Personaje p, int cantidad);
 
 /**
   \brief Incrementa la velocidad a la que se mueve personaje.
@@ -149,6 +147,11 @@ void    PersonajeAlteraEscudo(Personaje p, int n);
  */
 void    PersonajeAlteraBomba(Personaje p, int n);
 
+/**
+    \brief Hace a un personaje válido (se usará para jugar). Es útil si estamos en modo de un jugador y queremos que solo un jugador sea válido.
+
+    \param p Personaje que se quiere hacer válido
+*/
 void    PersonajeValido(Personaje p);
 
 /**
@@ -223,6 +226,12 @@ int    PersonajeE(Personaje p);
  */
 int    PersonajeB(Personaje p);
 
+/**
+    \brief Indica si un personaje es válido (se está usando actualmente). Es útil para comprobar si estamos jugando en modo de 1 jugador o de 2.
+
+    \param p Personaje que se quiere comprobar
+    \return 1 si es válido, 0 si no
+*/
 int    PersonajeEsValido(Personaje p);
 
 #endif // PERSONAJE_H
