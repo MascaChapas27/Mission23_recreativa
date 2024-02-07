@@ -17,7 +17,6 @@ Sonido creaSonido(const char * archivo)
     if(SDL_LoadWAV(archivo, &(s->audioSpec), &(s->inicioOnda), &(s->longitudOnda)) == NULL)
     {
         printf("Error al cargar el sonido %s\n",archivo);
-        exit(1);
     }
     preparaSonido(s);
     return s;
@@ -48,7 +47,6 @@ void preparaSonido(Sonido s)
 
     if(s->device == 0){
         printf("Error al establecer el dispositivo de reproducción\n");
-        exit(567);
     }
 }
 

@@ -514,7 +514,7 @@ int main(int argc, char *argv[])
         if(temporizador_delta>1/FPS){
             float tiempo_delta = 0;
             while(temporizador_delta>1/FPS){
-                tiempo_delta += 1/FPS*20;
+                tiempo_delta += 1/FPS*40;
                 temporizador_delta-=1.0/FPS;
             }
             contador_fps+=1;
@@ -1233,7 +1233,7 @@ int main(int argc, char *argv[])
         Pantalla_DibujaTexto("Use the Joystick to enter your name",250,240);
         Pantalla_DibujaTexto("Press Shoot when you're done",270,260);
         Pantalla_DibujaTexto(nombrePtr,380,280);
-        Pantalla_DibujaTexto("_",380+letraApuntada*8,290);
+        Pantalla_DibujaTexto("_",380+letraApuntada*9,290);
 
         Pantalla_Actualiza();
         Pantalla_Espera(100);
